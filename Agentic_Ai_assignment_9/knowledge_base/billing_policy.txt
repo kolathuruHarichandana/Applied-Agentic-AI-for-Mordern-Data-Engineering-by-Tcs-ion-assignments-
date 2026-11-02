@@ -1,0 +1,5 @@
+BILLING POLICY
+
+1. Monthly and annual billing supported.
+2. Failed payments retried automatically.
+3. Invoices available in billing section.

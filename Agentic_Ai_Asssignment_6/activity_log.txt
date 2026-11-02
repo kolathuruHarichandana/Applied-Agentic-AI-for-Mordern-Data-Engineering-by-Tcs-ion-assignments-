@@ -1,0 +1,8 @@
+INSERT | order=1 | Laptop Pro 15          | Rs.  2499.00 | confirmed
+INSERT | order=2 | Wireless Headphones    | Rs.    89.99 | shipped
+INSERT | order=3 | Gaming Chair           | Rs.   450.00 | delivered
+INSERT | order=4 | USB-C Hub              | Rs.    45.50 | delivered
+INSERT | order=6 | iPhone 16 Pro          | Rs.  1199.00 | pending
+INSERT | order=7 | MacBook Pro            | Rs.  2499.00 | pending
+INSERT | order=8 | Sony PS5               | Rs.  1500.00 | pending
+INSERT | order=9 | Sony PS5               | Rs.  1500.00 | pending

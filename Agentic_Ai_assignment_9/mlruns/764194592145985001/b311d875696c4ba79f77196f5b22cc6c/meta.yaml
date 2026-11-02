@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/HP/mlruns/764194592145985001/b311d875696c4ba79f77196f5b22cc6c/artifacts
+end_time: 1779095461309
+entry_point_name: ''
+experiment_id: '764194592145985001'
+lifecycle_stage: active
+run_id: b311d875696c4ba79f77196f5b22cc6c
+run_name: RAG_Evaluation_v1
+run_uuid: b311d875696c4ba79f77196f5b22cc6c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1779095461033
+status: 3
+tags: []
+user_id: HP

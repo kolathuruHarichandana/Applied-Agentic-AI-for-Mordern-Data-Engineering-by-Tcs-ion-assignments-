@@ -1,0 +1,27 @@
+ESCALATION STANDARD OPERATING PROCEDURE
+
+1. ESCALATION TRIGGERS
+Escalate when no resolution after 3 agent interactions.
+Customer explicitly requests supervisor.
+Ticket open more than 48 hours without resolution.
+Platinum or Gold customer with unresolved Critical ticket.
+Legal threat or social media complaint received.
+Refund amount exceeds Rs 10000.
+
+2. ESCALATION LEVELS
+Level 1: Senior Support Agent.
+Level 2: Support Team Lead.
+Level 3: Support Manager.
+Level 4: Director of Customer Experience for legal or media cases.
+
+3. ESCALATION PROCEDURE
+Step 1: Document all previous interactions in the ticket.
+Step 2: Tag ticket as Escalated in CRM system.
+Step 3: Assign to next level using assignment queue.
+Step 4: Notify customer via email that ticket has been escalated.
+SLA timers: Level 1 equals 4 hours, Level 2 equals 8 hours, Level 3 equals 24 hours.
+
+4. PLATINUM CUSTOMER ESCALATION
+Platinum customers skip Level 1 and go directly to Level 2.
+Dedicated account manager notified via Slack immediately.
+Compensation offer pre-approved up to Rs 2000.

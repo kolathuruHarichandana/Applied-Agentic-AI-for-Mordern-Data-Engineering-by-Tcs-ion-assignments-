@@ -1,0 +1,24 @@
+ACCOUNT AND BILLING FAQ
+
+Q1: I was charged twice for my order. What should I do?
+A: Check bank statement for duplicate transaction IDs.
+Email billing@company.com with Order ID and transaction IDs.
+Duplicate charge reversed within 3-5 business days.
+
+Q2: My account is locked. How do I unlock it?
+A: Accounts are locked after 5 failed login attempts.
+Click Forgot Password on login page and follow reset link.
+If email not received within 5 minutes check spam folder.
+
+Q3: How do I view my invoice?
+A: Go to My Orders, select order, and click Download Invoice PDF.
+Invoices are also emailed automatically after each purchase.
+
+Q4: What is the loyalty tier system?
+A: Bronze 0 to 999 points, Silver 1000 to 4999, Gold 5000 to 9999, Platinum 10000 plus.
+Points earned at 1 point per Rs 10 spent.
+Platinum members get priority support, free express delivery, and exclusive discounts.
+
+Q5: How do I apply a promo code?
+A: Enter promo code at checkout in Apply Coupon field.
+Only one promo code per order. Cannot be combined with other offers.

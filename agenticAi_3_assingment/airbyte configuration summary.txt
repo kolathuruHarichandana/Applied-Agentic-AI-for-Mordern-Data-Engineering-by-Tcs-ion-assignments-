@@ -1,0 +1,20 @@
+*Source
+Type: CSV File
+Method: HTTPS (Public Web / Google Drive)
+File: orders.csv
+Status: Connection test passed
+
+ Destination
+Type: Postgres (Neon) (or DuckDB if you used that)
+Database: neondb
+Schema: public
+
+Connection
+Name: CSV → Postgres
+Stream: orders
+Pipeline: Source → Destination
+
+ Sync Mode
+Initial Sync: Full Refresh
+Future Sync: Incremental (Append + Deduped)
+Cursor Field: updated_at

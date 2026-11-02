@@ -1,0 +1,5 @@
+[ALERT] HIGH VALUE! order=1 | Laptop Pro 15 | Rs.2,499.00
+[ALERT] HIGH VALUE! order=6 | iPhone 16 Pro | Rs.1,199.00
+[ALERT] HIGH VALUE! order=7 | MacBook Pro | Rs.2,499.00
+[ALERT] HIGH VALUE! order=8 | Sony PS5 | Rs.1,500.00
+[ALERT] HIGH VALUE! order=9 | Sony PS5 | Rs.1,500.00

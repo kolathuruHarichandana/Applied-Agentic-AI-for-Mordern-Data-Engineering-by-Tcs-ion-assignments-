@@ -1,0 +1,26 @@
+INTERNAL RESOLUTION NOTES
+
+CASE: Duplicate Payment
+Verify via payment gateway dashboard.
+Initiate reversal from Finance portal under Refunds and Duplicate Transactions.
+Timeline 3-5 business days. Notify customer with reversal reference number.
+
+CASE: Package Not Delivered but Marked Delivered
+Check GPS delivery proof in logistics portal.
+If no proof found lodge missing package claim with courier.
+Reship or refund within 5 business days.
+
+CASE: Device Dead on Arrival
+If reported within 48 hours of delivery classify as DOA.
+Initiate express replacement from DOA queue in Warehouse portal.
+Replacement ships within 24 hours for Platinum and 48 hours for others.
+
+CASE: Wrong Item Delivered
+Raise logistics error ticket in Warehouse Management System.
+Schedule pickup of wrong item and dispatch correct item simultaneously.
+Customer should not return before receiving correct item.
+
+CASE: Refund Not Received After 10 Days
+Check refund status in Finance portal.
+If status is Processed share bank reference number with customer.
+If status is Pending escalate to refunds-escalation@company.com.

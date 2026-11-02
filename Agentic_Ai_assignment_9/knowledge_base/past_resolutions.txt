@@ -1,0 +1,7 @@
+PAST RESOLUTION NOTES
+
+CASE #2789
+Windows 11 app crash fixed using hotfix v3.8.4
+
+CASE #3890
+2FA lockout resolved after identity verification.

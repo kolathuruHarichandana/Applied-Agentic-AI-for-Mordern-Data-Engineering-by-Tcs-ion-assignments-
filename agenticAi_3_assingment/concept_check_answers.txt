@@ -1,0 +1,19 @@
+Difference between ETL and ELT
+ETL (Extract, Transform, Load): Data is transformed before loading into destination.
+ELT (Extract, Load, Transform): Data is first loaded, then transformed inside the destination system.
+
+• Airbyte Definitions
+Source: The system from which data is extracted (e.g., CSV file).
+Destination: The system where data is loaded (e.g., Postgres/DuckDB).
+Connection: The pipeline that links source → destination and controls data sync.
+
+• Full Refresh
+Full Refresh reloads the entire dataset every time.
+Used when:
+Initial data load
+Data is small
+No need to track changes
+
+• Incremental Sync
+Only new or updated records are synced.
+Example cursor field: updated_at

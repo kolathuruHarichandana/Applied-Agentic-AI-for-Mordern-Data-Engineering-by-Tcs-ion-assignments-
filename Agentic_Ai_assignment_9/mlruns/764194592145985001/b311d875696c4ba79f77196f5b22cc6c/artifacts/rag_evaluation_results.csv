@@ -1,0 +1,8 @@
+query,context_relevance,answer_faithfulness,answer_completeness,avg_score,latency_sec
+How do I return a defective product?,0.333,1.0,0.333,0.555,0.0037
+My device is not turning on. What should I do?,0.8,1.0,0.8,0.867,0.0033
+I was charged twice for my order.,1.0,1.0,1.0,1.0,0.0029
+How long does a refund take?,1.0,1.0,1.0,1.0,0.0017
+What is the warranty policy for electronics?,1.0,1.0,0.667,0.889,0.0017
+How do I escalate a ticket?,1.0,1.0,1.0,1.0,0.0017
+My account is locked. How do I unlock it?,1.0,1.0,1.0,1.0,0.0031

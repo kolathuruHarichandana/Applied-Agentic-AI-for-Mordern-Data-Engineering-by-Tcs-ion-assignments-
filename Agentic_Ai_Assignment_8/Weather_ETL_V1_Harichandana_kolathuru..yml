@@ -1,0 +1,909 @@
+app:
+  description: " \nStudent Exercise — Weather analysis pipeline"
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  icon_type: emoji
+  mode: workflow
+  name: Weather ETL Agent V1
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/groq:0.0.15@6700e017e955cc6c34a6f495ba215772cb65c2b716a8f7903de5a80b05f8e674
+    version: null
+kind: app
+version: 0.6.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        attachment_image_file_size_limit: 2
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        file_upload_limit: 50
+        image_file_batch_limit: 10
+        image_file_size_limit: 10
+        single_chunk_attachment_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: llm
+      id: 1778174313420-source-1778174574085-target
+      source: '1778174313420'
+      sourceHandle: source
+      target: '1778174574085'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: code
+      id: 1778174574085-source-1778175348747-target
+      source: '1778174574085'
+      sourceHandle: source
+      target: '1778175348747'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: iteration
+      id: 1778175348747-source-1778175788228-target
+      source: '1778175348747'
+      sourceHandle: source
+      target: '1778175788228'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1778175788228'
+        sourceType: iteration-start
+        targetType: http-request
+      id: 1778175788228start-source-1778176153944-target
+      source: 1778175788228start
+      sourceHandle: source
+      target: '1778176153944'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1778175788228'
+        sourceType: http-request
+        targetType: if-else
+      id: 1778176153944-source-1778176336542-target
+      source: '1778176153944'
+      sourceHandle: source
+      target: '1778176336542'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1778175788228'
+        sourceType: if-else
+        targetType: code
+      id: 1778176336542-true-1778217575869-target
+      source: '1778176336542'
+      sourceHandle: 'true'
+      target: '1778217575869'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1778175788228'
+        sourceType: if-else
+        targetType: code
+      id: 1778176336542-false-1778217696726-target
+      source: '1778176336542'
+      sourceHandle: 'false'
+      target: '1778217696726'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: iteration
+        targetType: llm
+      id: 1778175788228-source-1778218692143-target
+      source: '1778175788228'
+      sourceHandle: source
+      target: '1778218692143'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 1778218692143-source-1778218881806-target
+      source: '1778218692143'
+      sourceHandle: source
+      target: '1778218881806'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 1778218881806-source-1778219016224-target
+      source: '1778218881806'
+      sourceHandle: source
+      target: '1778219016224'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: end
+      id: 1778219016224-source-1778219125400-target
+      source: '1778219016224'
+      sourceHandle: source
+      target: '1778219125400'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        selected: false
+        title: User Input
+        type: start
+        variables:
+        - default: Delhi, Mumbai, Kolkata, Chennai, Bangalore
+          hint: ''
+          label: Enter Indian cities (comma separated)
+          options: []
+          placeholder: ''
+          required: true
+          type: paragraph
+          variable: cities
+        - default: Details
+          hint: ''
+          label: Select report type
+          options:
+          - 'Summary '
+          - Details
+          - Alerts only
+          placeholder: ''
+          required: true
+          type: select
+          variable: report_type
+      height: 134
+      id: '1778174313420'
+      position:
+        x: 50.93903996344363
+        y: 260.2042799725827
+      positionAbsolute:
+        x: 50.93903996344363
+        y: 260.2042799725827
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        model:
+          completion_params:
+            max_tokens: 501
+            temperature: 0
+            top_p: 1
+          mode: chat
+          name: llama-3.1-8b-instant
+          provider: langgenius/groq/groq
+        prompt_template:
+        - id: 88ba5d3f-c54a-44c4-99b9-aececf9ca651
+          role: system
+          text: 'You are a city name parser. Your job is to take a user''s free-text
+            input of city names and return a clean JSON array of normalized Indian
+            city names.
+
+
+            Rules:
+
+            1. Split the input by commas, newlines, or any reasonable delimiter
+
+            2. Trim whitespace from each city name
+
+            3. Correct common typos
+
+            4. Resolve aliases
+
+            5. Capitalize properly
+
+            6. Remove duplicates
+
+            7. Return ONLY a valid JSON array, nothing else'
+        - id: 41313129-5636-4e50-9904-60eb3ab21cdb
+          role: user
+          text: Parse these cities:User Input → cities
+        selected: false
+        title: City Parser
+        type: llm
+        vision:
+          enabled: false
+      height: 87
+      id: '1778174574085'
+      position:
+        x: 370.18169155511305
+        y: 150.77374018766415
+      positionAbsolute:
+        x: 370.18169155511305
+        y: 150.77374018766415
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "\ndef main(parsed_cities: str) -> dict:\n    import json\n    return\
+          \ {\"cities_array\": json.loads(parsed_cities)}"
+        code_language: python3
+        outputs:
+          cities_array:
+            children: null
+            type: array[string]
+        selected: false
+        title: Code
+        type: code
+        variables:
+        - value_selector:
+          - '1778174574085'
+          - text
+          value_type: string
+          variable: parsed_cities
+      height: 51
+      id: '1778175348747'
+      position:
+        x: 672.181691555113
+        y: 150.77374018766415
+      positionAbsolute:
+        x: 672.181691555113
+        y: 150.77374018766415
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        error_handle_mode: terminated
+        flatten_output: true
+        height: 243
+        is_parallel: false
+        iterator_input_type: array[string]
+        iterator_selector:
+        - '1778175348747'
+        - cities_array
+        output_selector:
+        - '1778217575869'
+        - result
+        output_type: array[string]
+        parallel_nums: 10
+        selected: false
+        start_node_id: 1778175788228start
+        title: Iteration
+        type: iteration
+        width: 990
+      height: 243
+      id: '1778175788228'
+      position:
+        x: 355.20355576405416
+        y: 427.0152510217341
+      positionAbsolute:
+        x: 355.20355576405416
+        y: 427.0152510217341
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 990
+      zIndex: 1
+    - data:
+        desc: ''
+        isInIteration: true
+        selected: false
+        title: ''
+        type: iteration-start
+      draggable: false
+      height: 48
+      id: 1778175788228start
+      parentId: '1778175788228'
+      position:
+        x: 24
+        y: 68
+      positionAbsolute:
+        x: 379.20355576405416
+        y: 495.0152510217341
+      selectable: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-iteration-start
+      width: 44
+      zIndex: 1002
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data: []
+          type: none
+        headers: User-Agent:curl
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1778175788228'
+        method: get
+        params: ''
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: HTTP Request
+        type: http-request
+        url: https://wttr.in{{#1778175788228.item#}}?format=j1
+        variables: []
+      height: 155
+      id: '1778176153944'
+      parentId: '1778175788228'
+      position:
+        x: 109.9928590558552
+        y: 65
+      positionAbsolute:
+        x: 465.19641481990936
+        y: 492.0152510217341
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: '='
+            id: 8fa04e0e-6a68-4c5d-8eac-464b2138879c
+            value: '200'
+            varType: number
+            variable_selector:
+            - '1778176153944'
+            - status_code
+          id: 'true'
+          logical_operator: and
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1778175788228'
+        selected: false
+        title: IF/ELSE
+        type: if-else
+      height: 147
+      id: '1778176336542'
+      parentId: '1778175788228'
+      position:
+        x: 430
+        y: 68
+      positionAbsolute:
+        x: 785.2035557640542
+        y: 495.0152510217341
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        code: "def main(city, response_body):\n    import json\n\n    try:\n     \
+          \   data = json.loads(response_body)\n\n        current = data[\"current_condition\"\
+          ][0]\n        area = data[\"nearest_area\"][0]\n\n        desc_list = current.get(\"\
+          weatherDesc\", [{}])\n        desc = desc_list[0].get(\"value\", \"Unknown\"\
+          )\n\n        result = {\n            \"city\": city,\n            \"resolved_name\"\
+          : area[\"areaName\"][0][\"value\"],\n            \"country\": area[\"country\"\
+          ][0][\"value\"],\n            \"status\": \"success\",\n            \"data\"\
+          : {\n                \"temp_C\": int(current.get(\"temp_C\", \"0\")),\n\
+          \                \"feels_like_C\": int(current.get(\"FeelsLikeC\", \"0\"\
+          )),\n                \"humidity\": int(current.get(\"humidity\", \"0\")),\n\
+          \                \"weatherDesc\": desc,\n                \"windspeedKmph\"\
+          : int(current.get(\"windspeedKmph\", \"0\")),\n                \"precipMM\"\
+          : float(current.get(\"precipMM\", \"0.0\")),\n                \"visibility\"\
+          : int(current.get(\"visibility\", \"0\")),\n                \"uvIndex\"\
+          : int(current.get(\"uvIndex\", \"0\")),\n                \"pressure\": int(current.get(\"\
+          pressure\", \"0\")),\n                \"cloudcover\": int(current.get(\"\
+          cloudcover\", \"0\")),\n                \"obs_time\": current.get(\"localObsDateTime\"\
+          , \"Unknown\")\n            }\n        }\n\n        return {\"result\":\
+          \ json.dumps(result)}\n\n    except Exception as e:\n        error_msg =\
+          \ \"Parse error: \" + str(e)\n\n        fallback = {\n            \"city\"\
+          : city,\n            \"status\": \"error\",\n            \"error\": error_msg\n\
+          \        }\n\n        return {\"result\": json.dumps(fallback)}\n"
+        code_language: python3
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1778175788228'
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: Code 2
+        type: code
+        variables:
+        - value_selector:
+          - '1778175788228'
+          - item
+          value_type: string
+          variable: city
+        - value_selector:
+          - '1778176153944'
+          - body
+          value_type: string
+          variable: response_body
+      height: 51
+      id: '1778217575869'
+      parentId: '1778175788228'
+      position:
+        x: 732
+        y: 68
+      positionAbsolute:
+        x: 1087.2035557640543
+        y: 495.0152510217341
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        code: "def main(city: str, status_code: str) -> dict:\n    import json\n\n\
+          \    result = {\n        \"city\": city,\n        \"status\": \"unavailable\"\
+          ,\n        \"error\": f\"HTTP {status_code} — API returned error or timeout\"\
+          \n    }\n\n    return {\"result\": json.dumps(result)}"
+        code_language: python3
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1778175788228'
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: Code 3
+        type: code
+        variables:
+        - value_selector:
+          - '1778175788228'
+          - item
+          value_type: string
+          variable: city
+        - value_selector:
+          - '1778176153944'
+          - status_code
+          value_type: number
+          variable: status_code
+      height: 51
+      id: '1778217696726'
+      parentId: '1778175788228'
+      position:
+        x: 732
+        y: 158
+      positionAbsolute:
+        x: 1087.2035557640543
+        y: 585.0152510217341
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        model:
+          completion_params:
+            temperature: 0.3
+          mode: chat
+          name: meta-llama/llama-4-scout-17b-16e-instruct
+          provider: langgenius/groq/groq
+        prompt_template:
+        - id: 6002061c-0df1-4a9e-bfab-5f504b739d53
+          role: system
+          text: 'You are a Weather Data Analyst. You receive raw weather data collected
+            from multiple Indian cities and must produce a structured analysis.
+
+
+            ## Your Tasks
+
+
+            1. Rank cities by temperature (hottest to coldest)
+
+
+            2. Detect anomalies:
+
+            - Temperature above 40°C or below 10°C
+
+            - Humidity above 85%
+
+            - Wind speed above 40 kmph
+
+            - Precipitation above 10mm
+
+            - UV Index above 8
+
+            - Visibility below 3 km
+
+
+            3. Identify weather patterns:
+
+            - Are multiple cities experiencing similar conditions?
+
+            - Is there evidence of a regional weather event (monsoon, heatwave, cold
+            wave, dust storm)?
+
+
+            4. Calculate cross-city statistics:
+
+            - Average temperature
+
+            - Average humidity
+
+            - Temperature range
+
+
+            5. Assign a risk level per city:
+
+            - NORMAL → No concerning conditions
+
+            - WATCH → One metric is in warning range
+
+            - ALERT → Multiple concerning metrics or extreme values
+
+
+            6. Add confidence score:
+
+            For each risk rating, provide confidence:
+
+            HIGH / MEDIUM / LOW with a short reason.
+
+
+            ## Output Format
+
+
+            ### City Rankings (Temperature)
+
+            [List hottest to coldest]
+
+
+            ### Anomalies Detected
+
+            [List anomalies or write "None detected"]
+
+
+            ### Regional Weather Patterns
+
+            [Describe common patterns]
+
+
+            ### Cross-City Statistics
+
+            - Average Temperature: X°C
+
+            - Average Humidity: X%
+
+            - Temperature Range: X°C (City) to X°C (City)
+
+
+            ### Risk Assessment
+
+            | City | Risk Level | Key Factors | Confidence |
+
+            |------|-------------|-------------|------------|
+
+
+            ### Summary
+
+            [2-3 sentence overall summary]'
+        - id: 9b236368-eca6-4dae-ab93-6cf75e68d0ca
+          role: user
+          text: 'Analyze the following weather data collected from Indian cities.
+
+
+            Report type requested:
+
+            {{report_type}}
+
+            Raw weather data:{{#1778175788228.output#}}
+
+            Produce your structured analysis now'
+        selected: false
+        title: Weather Analyst
+        type: llm
+        vision:
+          enabled: false
+      height: 87
+      id: '1778218692143'
+      position:
+        x: 1339.4085544249558
+        y: 196.73274633488865
+      positionAbsolute:
+        x: 1339.4085544249558
+        y: 196.73274633488865
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        model:
+          completion_params:
+            temperature: 0.3
+          mode: chat
+          name: meta-llama/llama-4-scout-17b-16e-instruct
+          provider: langgenius/groq/groq
+        prompt_template:
+        - id: f0e86a13-5a62-44e2-9dc1-56e6177c694d
+          role: system
+          text: "You are a Weather Quality Reviewer.\n\nYou receive TWO inputs:\n\
+            1. Raw weather data from multiple Indian cities\n2. A Weather Analyst's\
+            \ structured analysis of that data\n\nYour job is to REVIEW and CRITIQUE\
+            \ the analyst’s work carefully.\n\n## Your Tasks\n\n1. Cross-check findings\n\
+            - Verify rankings, calculations, anomaly detection, and statistics\n-\
+            \ Ensure temperatures, humidity, wind, precipitation, UV index, and visibility\
+            \ values are interpreted correctly\n\n2. Challenge risk assessments\n\
+            - Check whether assigned risk levels truly match the data\n- Detect missed\
+            \ dangerous combinations such as:\n  - High humidity + high temperature\
+            \ = dangerous heat index\n  - Low visibility + high wind = travel hazard\n\
+            \  - Heavy rain + strong wind = storm concern\n- Identify over-reactions\
+            \ or under-reactions\n\n3. Add derived insights\n- Heat Index:\n  If humidity\
+            \ > 60% and temperature > 32°C, mention possible heat stress\n- Wind Chill:\n\
+            \  If temp < 15°C and wind > 20 kmph, mention chill effect\n- Travel Advisory:\n\
+            \  If visibility < 5 km or wind > 50 kmph, flag travel concerns\n\n4.\
+            \ Review data quality\n- Identify missing values or suspicious weather\
+            \ readings\n- Mention if any cities have incomplete information\n- Explain\
+            \ how missing data affects reliability\n\n5. Provide agreements and disagreements\
+            \ clearly\n\n## Output Format\n\n### Verified Findings\n[List the analyst\
+            \ findings that are correct]\n\n### Disagreements\n[List incorrect or\
+            \ questionable findings]\nIf none, write:\n\"No major disagreements —\
+            \ analyst assessment is accurate.\"\n\n### Additional Insights\n[List\
+            \ important insights or derived metrics the analyst missed]\n\n### Data\
+            \ Quality Assessment\n[Describe missing data, inconsistencies, or reliability\
+            \ concerns]\n\n### Final Recommendation\n[State whether the analyst report\
+            \ is trustworthy or needs corrections]"
+        - id: fd8cd238-da5b-4bad-b7f4-f3823ef8de1e
+          role: user
+          text: 'Review this report:{{#1778218692143.text#}}
+
+            Review the following weather analysis.
+
+
+            Report type:
+
+            {{report_type}}
+
+
+            ## Raw Weather Data (same data the analyst received):{{#1778175788228.output#}}
+
+            ## Analyst''s Analysis:{{#1778218692143.text#}}
+
+            Produce your review now.
+
+
+            Be specific:
+
+            - Reference actual values from the raw data
+
+            - Mention incorrect rankings or calculations
+
+            - Explain disagreements clearly
+
+            - Add any missing safety or weather insights'
+        selected: false
+        title: Quality Reviewer
+        type: llm
+        vision:
+          enabled: false
+      height: 87
+      id: '1778218881806'
+      position:
+        x: 1441.51707416617
+        y: 405.0835839087012
+      positionAbsolute:
+        x: 1441.51707416617
+        y: 405.0835839087012
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        model:
+          completion_params:
+            temperature: 0.2
+          mode: chat
+          name: meta-llama/llama-4-scout-17b-16e-instruct
+          provider: langgenius/groq/groq
+        prompt_template:
+        - id: 4b4ded25-9d7b-404d-b480-a1176a7b213f
+          role: system
+          text: "You are a Weather Report Generator.\n\nYou receive:\n1. A Weather\
+            \ Analyst’s findings\n2. A Quality Reviewer’s critique\n3. Raw weather\
+            \ data collected from multiple Indian cities\n\nYour task is to generate\
+            \ a FINAL polished weather intelligence report.\n\n## Rules\n\n1. Combine\
+            \ both analyst and reviewer perspectives into one coherent report\n\n\
+            2. When the reviewer agrees with the analyst:\n- Present the finding confidently\n\
+            \n3. When the reviewer disagrees:\n- Present BOTH viewpoints\n- Clearly\
+            \ explain the disagreement\n- Mention the supporting raw weather values\n\
+            \n4. Match detail level based on report_type:\n\n- Summary:\n  Brief overview\
+            \ (200–300 words)\n\n- Detailed:\n  Full city-by-city breakdown (500–800\
+            \ words)\n\n- Alerts Only:\n  Include ONLY cities with WATCH or ALERT\
+            \ conditions\n\n5. Include a data freshness note or timestamp\n\n6. Mention\
+            \ cities with missing or unavailable data\n\n7. Use emoji indicators for\
+            \ risk levels:\n- \U0001F7E2 NORMAL\n- \U0001F7E1 WATCH\n- \U0001F534\
+            \ ALERT\nFormat the final response professionally using:\n\n- Clear section\
+            \ headings\n- Bullet points\n- Tables for city weather data\n- Compact\
+            \ summaries\n- Clean readable formatting\n\nInclude:\n1. Report Title\n\
+            2. Data Freshness\n3. Overview\n4. City-by-City Breakdown Table\n5. Risk\
+            \ Summary\n6. Key Alerts\n7. Recommendations\n\nMake the response visually\
+            \ clean and presentation-friendly.\n8. End with practical safety recommendations\n\
+            \n## Output Format\n\n# Final Weather Intelligence Report\n\n## Executive\
+            \ Summary\n[Overall regional overview]\n\n## City Risk Overview\n| City\
+            \ | Risk Level | Key Concerns | Confidence |\n|------|-------------|--------------|------------|\n\
+            \n## Major Findings\n[Important weather observations]\n\n## Reviewer Notes\n\
+            [Corrections, disagreements, or quality concerns]\n\n## Safety Recommendations\n\
+            [Travel, heat, rain, storm, or health advisories]\n\n## Data Freshness\n\
+            [Timestamp or freshness note]"
+        - id: 99638072-6080-4d5f-86af-5f2fd9607126
+          role: user
+          text: 'Generate the final report from this reviewed analysis:{{#1778218881806.text#}}
+
+            Generate the final weather intelligence report.
+
+
+            Report Type:
+
+            {{report_type}}
+
+
+            ## Analyst''s Findings:{{#1778218692143.text#}}
+
+
+            ## Reviewer''s Assessment:{{#1778218881806.text#}}
+
+
+            ## Raw Weather Data (for reference):{{#1778175788228.output#}}
+
+
+
+            Generate a polished, readable final report now.
+
+
+            Requirements:
+
+            - Merge analyst and reviewer insights
+
+            - Include reviewer disagreements if any
+
+            - Use risk emojis: 🟢 🟡 🔴
+
+            - Mention missing or unavailable cities
+
+            - Add practical safety recommendations
+
+            - Use observation timestamps from raw weather data for the Data Freshness
+            section'
+        selected: false
+        title: Report Generator
+        type: llm
+        vision:
+          enabled: false
+      height: 87
+      id: '1778219016224'
+      position:
+        x: 1484.4100927021957
+        y: 580.5369208129645
+      positionAbsolute:
+        x: 1484.4100927021957
+        y: 580.5369208129645
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        outputs:
+        - value_selector:
+          - '1778219016224'
+          - text
+          value_type: string
+          variable: final_report
+        selected: false
+        title: Output
+        type: end
+      height: 88
+      id: '1778219125400'
+      position:
+        x: 1430.2873959078497
+        y: 787.5828986818212
+      positionAbsolute:
+        x: 1430.2873959078497
+        y: 787.5828986818212
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    viewport:
+      x: 20.061293979049196
+      y: -19.601312798251456
+      zoom: 0.5833469081281096
+  rag_pipeline_variables: []

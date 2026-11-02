@@ -1,0 +1,21 @@
+employee_id,name,department,age,salary,joining_year
+1,Amit Sharma,Engineering,28,55000,2020
+2,Priya Das,Marketing,32,62000,2019
+3,Rahul Sen,Engineering,29,58000,2021
+4,Sneha Roy,HR,35,60000,2018
+5,Arjun Mehta,Finance,41,72000,2016
+6,Neha Kapoor,Engineering,27,53000,2022
+7,Varun Gupta,Marketing,,61000,2020
+8,Ishita Bose,HR,30,not_available,2019
+9,Karan Malhotra,Finance,38,75000,2015
+10,Ritika Singh,,26,52000,2023
+11,Ankit Verma,Engineering,33,67000,2017
+12,Megha Nair,Marketing,31,64000,2018
+13,Rohit Banerjee,Finance,45,82000,2014
+14,Simran Kaur,Engineering,29,59000,2021
+15,Vikram Rao,HR,36,61000,2016
+16,Tanya Ghosh,Engineering,28,56000,2020
+17,Aditya Iyer,Marketing,34,69000,2017
+18,Pooja Chatterjee,Finance,39,73000,2015
+19,Nikhil Jain,Engineering,30,60000,2019
+20,Shreya Mukherjee,HR,27,54000,2022

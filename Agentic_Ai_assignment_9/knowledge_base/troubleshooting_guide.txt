@@ -1,0 +1,30 @@
+TECHNICAL TROUBLESHOOTING GUIDE
+
+SECTION 1: WIFI CONNECTIVITY ISSUES
+Problem: Device not connecting to WiFi.
+Steps: Restart device and router. Forget and reconnect WiFi network.
+Check if other devices connect. Update firmware. Reset network settings.
+Contact support with device model if issue persists.
+
+SECTION 2: DEVICE NOT TURNING ON
+Problem: Device completely unresponsive.
+Steps: Charge device for 30 minutes. Perform hard reset by holding Power and Volume Down for 10 seconds.
+Check charging port for damage. Try different cable and adapter.
+If under warranty raise a replacement request immediately.
+
+SECTION 3: APPLICATION CRASHES
+Problem: App crashes on launch.
+Steps: Force close and relaunch. Clear app cache in Settings.
+Update app from app store. Uninstall and reinstall application.
+Ensure at least 1 GB free storage space available.
+
+SECTION 4: BATTERY DRAINS QUICKLY
+Problem: Battery drains within short time.
+Steps: Check battery usage in Settings. Disable background app refresh.
+Reduce screen brightness and timeout. Disable location services.
+If battery health below 80 percent apply for warranty battery replacement.
+
+SECTION 5: SCREEN FLICKERING
+Problem: Screen flickering or display issues.
+Steps: Adjust brightness. Disable auto brightness. Update firmware.
+Boot in safe mode to check third party apps. Book service centre if hardware issue.

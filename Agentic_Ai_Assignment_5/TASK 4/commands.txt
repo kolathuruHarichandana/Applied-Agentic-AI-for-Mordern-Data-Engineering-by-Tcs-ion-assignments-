@@ -1,0 +1,18 @@
+# Start Docker services
+docker-compose up -d
+
+# Check running containers
+docker ps
+
+# Run Ollama model
+docker exec -it ollama ollama run qwen2.5:3b
+
+# Exit Ollama (after testing)
+/bye
+
+# Navigate to project folder
+D:
+cd Module5_Docker_Environment\Module5_Docker_Environment
+
+# Run Python script
+python llm_trino_query.py
